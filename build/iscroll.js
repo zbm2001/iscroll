@@ -722,13 +722,13 @@ IScroll.prototype = {
 		time = time || 0;
 
 		if ( !this.hasHorizontalScroll || this.x > 0 ) {
-			x = 0;
+			x = this.minScrollX;
 		} else if ( this.x < this.maxScrollX ) {
 			x = this.maxScrollX;
 		}
 
 		if ( !this.hasVerticalScroll || this.y > 0 ) {
-			y = 0;
+			y = this.minScrollY;
 		} else if ( this.y < this.maxScrollY ) {
 			y = this.maxScrollY;
 		}
@@ -762,8 +762,11 @@ IScroll.prototype = {
 		this.scrollerWidth	= rect.width;
 		this.scrollerHeight	= rect.height;
 
-		this.maxScrollX		= this.wrapperWidth - this.scrollerWidth;
-		this.maxScrollY		= this.wrapperHeight - this.scrollerHeight;
+      this.minScrollX		= 0;
+      this.minScrollY		= 0;
+
+      this.maxScrollX		= this.wrapperWidth - this.scrollerWidth;
+      this.maxScrollY		= this.wrapperHeight - this.scrollerHeight;
 
 /* REPLACE END: refresh */
 

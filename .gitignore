@@ -2,3 +2,6 @@
 ._*
 node_modules
 dist
+
+# Android Studio builds or Webstorm builds
+.idea
